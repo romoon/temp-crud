@@ -11,16 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 // User 認証不要
 Route::get('/', function () { return redirect('/home'); });
+Route::get('/index', function () { return view('index'); });
 
 // User ログイン後
 Route::group(['middleware' => 'auth:user'], function() {
@@ -29,7 +30,7 @@ Route::group(['middleware' => 'auth:user'], function() {
 
 // Admin 認証不要
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/',         function () { return redirect('/admin/home'); });
+    Route::get('/',         function () { return redirect('/admin/login'); });
     Route::get('login',     'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login',    'Admin\LoginController@login');
 });
