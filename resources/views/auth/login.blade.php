@@ -54,9 +54,9 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('User Login') }}
                                 </button>
-                                <a href="{{ route('admin.login') }}" role="button" class="btn btn-primary">Admin Login</a>
+                                <a href="{{ route('admin.login') }}" role="button" class="btn btn-outline-danger">Admin Login</a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
