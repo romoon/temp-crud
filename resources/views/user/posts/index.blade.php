@@ -12,14 +12,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-5 ml-auto">
+                    <div class="col-md-10">
                         <form action="{{ action('User\PostController@index') }}" method="get">
-                            <div class="form-group row">
+                            <div class="form-group row mt-4">
                                 <label class="col-md-2">検索</label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     {{ csrf_field() }}
                                     <input type="submit" class="btn btn-rmngreen" value="検索">
                                 </div>
@@ -66,13 +66,16 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="row">
+                  {{ $posts->links() }}
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 mx-auto mt-5">
                 <div class="row">
                     <div class="col-md-10">
-                      <a href="{{ asset('user/posts/create') }}" role="button" class="btn btn-outline-rmngreen">新規投稿</a>
+                      <a href="{{ asset('user/posts/create') }}" role="button" class="btn btn-rmngreen">新規投稿</a>
                       <a href="{{ asset('user/profile/edit') }}" role="button" class="btn btn-warning">ユーザー情報の編集</a>
                     </div>
                 </div>

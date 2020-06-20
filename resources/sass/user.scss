@@ -16,6 +16,18 @@ $btn-colors: (
     "rmngreen": $rmngreen,
     );
 
+// paginationここから
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: #009185 !important;
+  border-color: #009185 !important;
+}
+
+.page-link {
+  color: #009185 !important;
+}
+// paginationここまで
+
 // toggle-cssここから
 .can-toggle {
   position: relative;

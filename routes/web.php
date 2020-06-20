@@ -41,8 +41,11 @@ Route::group(['prefix' => 'admin'], function() {
 
 // Admin ログイン後
 Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function() {
-    Route::get('/logout', 'Admin\LoginController@logout')->name('admin.logout');
-    Route::post('/logout', 'Admin\LoginController@logout')->name('admin.logout');
-    Route::get('/home', 'Admin\HomeController@index')->name('admin.home');
+    Route::get('/', 'Admin\HomeController@index')->name('admin.index');
+    Route::get('/home', 'Admin\HomeController@index')->name('admin.index');
+    Route::get('/index', 'Admin\HomeController@index');
+    Route::get('admin/delete', 'Admin\HomeController@delete');
+    Route::get('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
+    Route::post('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
     // Route::post('/home', 'Admin\HomeController@index')->name('admin.home');
 });

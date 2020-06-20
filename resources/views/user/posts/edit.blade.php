@@ -60,8 +60,8 @@
                         <div class="col-md-12">
                             <input type="hidden" name="id" value="{{ $posts_form->id }}">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-rmngreen" value="更新">
-                            <a href="{{ asset('user/posts') }}" role="button" class="btn btn-rmngreen">投稿の一覧</a>
+                            <input type="submit" class="btn btn-outline-rmngreen" value="更新">
+                            <a href="{{ asset('user/posts/index') }}" role="button" class="btn btn-outline-rmngreen">投稿の一覧</a>
                         </div>
                     </div>
                 </form>
