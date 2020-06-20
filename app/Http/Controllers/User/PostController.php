@@ -33,11 +33,8 @@ class PostController extends Controller
       } else {
           $posts->image_path = null;
       }
-      // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
-      // フォームから送信されてきたimageを削除する
       unset($form['image']);
-      // データベースに保存する
       $posts->fill($form);
       $posts->save();
 
