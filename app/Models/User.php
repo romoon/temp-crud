@@ -42,4 +42,9 @@ class User extends Authenticatable
         'password' => 'required',
     );
 
+    public function posts()
+    {
+      return $this->hasMany('App\Models\Posts');
+    }
+
 }
