@@ -7,6 +7,16 @@ body {
   color: #000;
 }
 
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: #009185 !important;
+  border-color: #009185 !important;
+}
+
+.page-link {
+  color: #009185 !important;
+}
+
 .can-toggle {
   position: relative;
 }
