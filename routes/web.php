@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -26,6 +22,14 @@ Route::get('/index', function () { return view('index'); });
 // User ログイン後
 Route::group(['middleware' => 'auth:user'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('user/posts/create', 'User\PostController@add');
+    Route::post('user/posts/create', 'User\PostController@create');
+    Route::get('user/posts/index', 'User\PostController@index');
+    Route::get('user/posts/edit', 'User\PostController@edit');
+    Route::post('user/posts/edit', 'User\PostController@update');
+    Route::get('user/posts/delete', 'User\PostController@delete');
+    Route::get('user/profile/edit', 'User\ProfileController@edit');
+    Route::post('user/profile/edit', 'User\ProfileController@update');
 });
 
 // Admin 認証不要
