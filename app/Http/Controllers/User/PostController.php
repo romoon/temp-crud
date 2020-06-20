@@ -69,12 +69,10 @@ class PostController extends Controller
 
   public function update(Request $request)
   {
-      // Validationをかける
       $this->validate($request, Posts::$rules);
-      // News Modelからデータを取得する
       $posts = Posts::find($request->id);
-      // 送信されてきたフォームデータを格納する
       $posts_form = $request->all();
+
       if (isset($posts_form['image'])) {
         $path = $request->file('image')->store('public/image');
         $posts->image_path = basename($path);
@@ -85,8 +83,8 @@ class PostController extends Controller
         $posts->image_path = null;
         unset($posts_form['remove']);
       }
+
       unset($posts_form['_token']);
-      // 該当するデータを上書きして保存する
       $posts->fill($posts_form)->save();
 
       return redirect('user/posts/index');
@@ -94,10 +92,9 @@ class PostController extends Controller
 
   public function delete(Request $request)
   {
-      // 該当するNews Modelを取得
       $posts = Posts::find($request->id);
-      // 削除する
       $posts->delete();
+
       return redirect('user/posts/index');
   }
 }
