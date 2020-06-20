@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\Models\Posts;
 use Storage;
 
@@ -50,11 +49,11 @@ class PostController extends Controller
           $posts = Posts::where('user_id', $currentuser)
           ->where('title', 'like', '%'.$cond_title.'%')
           ->orwhere('body', 'like', '%'.$cond_title.'%')
-          ->get();
+          ->paginate(10); // ->get();
       } else {
           // それ以外はすべてのニュースを取得する
           $posts = Posts::where('user_id', $currentuser)
-          ->get();
+          ->paginate(10); // ->get();
       }
       return view('user.posts.index', ['posts' => $posts, 'cond_title' => $cond_title]);
   }
