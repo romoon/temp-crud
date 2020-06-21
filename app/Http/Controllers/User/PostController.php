@@ -20,6 +20,7 @@ class PostController extends Controller
       // Varidationを行う
       $this->validate($request, Posts::$rules);
 
+      // PostsはModels
       $posts = new Posts;
       $form = $request->all();
 
