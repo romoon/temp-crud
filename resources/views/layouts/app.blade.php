@@ -47,6 +47,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ asset('/index') }}">Temp-CRUDトップ</a>
                                 <a class="dropdown-item" href="{{ asset('admin/index') }}">User一覧</a>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}"
                                    onclick="event.preventDefault();

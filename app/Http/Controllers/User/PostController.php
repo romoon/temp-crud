@@ -28,8 +28,6 @@ class PostController extends Controller
       if (isset($form['image'])) {
           $path = $request->file('image')->store('public/image');
           $posts->image_path = basename($path);
-          // $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
-          // $posts->image_path = Storage::disk('s3')->url($path);
       } else {
           $posts->image_path = null;
       }
@@ -50,10 +48,12 @@ class PostController extends Controller
           $posts = Posts::where('user_id', $currentuser)
           ->where('title', 'like', '%'.$cond_title.'%')
           ->orwhere('body', 'like', '%'.$cond_title.'%')
+          ->Latest('updated_at')
           ->paginate(10); // ->get();
       } else {
           // それ以外はすべてのニュースを取得する
           $posts = Posts::where('user_id', $currentuser)
+          ->Latest('updated_at')
           ->paginate(10); // ->get();
       }
       return view('user.posts.index', ['posts' => $posts, 'cond_title' => $cond_title]);
@@ -77,8 +77,6 @@ class PostController extends Controller
       if (isset($posts_form['image'])) {
         $path = $request->file('image')->store('public/image');
         $posts->image_path = basename($path);
-        // $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
-        // $posts->image_path = Storage::disk('s3')->url($path);
         unset($posts_form['image']);
       } elseif (isset($request->remove)) {
         $posts->image_path = null;

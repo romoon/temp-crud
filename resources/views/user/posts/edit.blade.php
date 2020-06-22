@@ -34,11 +34,16 @@
                             <div class="form-text text-info">
                                 設定中: {{ $posts_form->image_path }}
                             </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
-                                </label>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">画像を削除</label>
+                        <div class="col-md-10 can-toggle demo-rebrand-1">
+                            <input id="c" type="checkbox" name="remove" value="true" />
+                            <label for="c">
+                                <div class="can-toggle__switch" data-checked="削除" data-unchecked="削除しない"></div>
+                                <div class="can-toggle__label-text">　</div>
+                            </label>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -52,7 +57,7 @@
                             @endif
                             <label for="d">
                                 <div class="can-toggle__switch" data-checked="公開" data-unchecked="非公開"></div>
-                                <div class="can-toggle__label-text">公開/非公開</div>
+                                <div class="can-toggle__label-text">　</div>
                             </label>
                         </div>
                     </div>

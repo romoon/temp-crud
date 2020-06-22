@@ -7,6 +7,13 @@ body {
   color: #000;
 }
 
+img {
+  width: 100%;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .page-item.active .page-link {
   color: #fff !important;
   background-color: #009185 !important;
@@ -106,26 +113,17 @@ body {
   color: #6a6a6a;
 }
 
-.can-toggle input[type=checkbox]:checked ~ label:hover {
-  color: #009185;
-}
-
-.can-toggle input[type=checkbox]:checked ~ label .can-toggle__switch {
-  background-color: #009185;
-}
-
-.can-toggle input[type=checkbox]:checked ~ label .can-toggle__switch:after {
-  color: #009185;
-}
-
-.can-toggle input[type=checkbox]:checked:focus ~ label .can-toggle__switch,
-.can-toggle input[type=checkbox]:checked:hover ~ label .can-toggle__switch {
-  background-color: #009185;
-}
-
+.can-toggle input[type=checkbox]:checked ~ label:hover,
+.can-toggle input[type=checkbox]:checked ~ label .can-toggle__switch:after,
 .can-toggle input[type=checkbox]:checked:focus ~ label .can-toggle__switch:after,
 .can-toggle input[type=checkbox]:checked:hover ~ label .can-toggle__switch:after {
   color: #009185;
+}
+
+.can-toggle input[type=checkbox]:checked ~ label .can-toggle__switch,
+.can-toggle input[type=checkbox]:checked:focus ~ label .can-toggle__switch,
+.can-toggle input[type=checkbox]:checked:hover ~ label .can-toggle__switch {
+  background-color: #009185;
 }
 
 .can-toggle label .can-toggle__label-text {

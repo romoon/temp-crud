@@ -16,8 +16,10 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // User 認証不要
-Route::get('/', function () { return redirect('/home'); });
-Route::get('/index', function () { return view('index'); });
+Route::get('/', 'FrontController@index');
+Route::get('/index', 'FrontController@index');
+// Route::get('/', function () { return redirect('/home'); });
+// Route::get('/index', function () { return view('index'); });
 
 // User ログイン後
 Route::group(['middleware' => 'auth:user'], function() {
