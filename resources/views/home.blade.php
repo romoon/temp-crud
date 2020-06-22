@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in!<br/>
-                    <a href="{{ asset('/index') }}" role="button" class="btn btn-success">CRUDトップ</a>
+                    <a href="{{ asset('/index') }}" role="button" class="btn btn-success">Temp_CRUDトップ</a>
                 </div>
             </div>
         </div>
