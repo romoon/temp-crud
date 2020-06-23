@@ -45,11 +45,7 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
-        if($exception->getStatusCode() == 419) {
-            return response()->view('/login');
-        }
-        
+    {    
         return parent::render($request, $exception);
     }
 }
